@@ -20,8 +20,10 @@ public class OutsourcedEmployee extends Employee{
 		this.additionalCharge = additionalCharge;
 	}
 	
-	public void additional(double additonalCharge) {
-		additionalCharge = additionalCharge * 1.1;
+	public void additional(double additional) {
+		additionalCharge = additionalCharge + additional * 1.1;
 	}
+	
+	
 
 }
