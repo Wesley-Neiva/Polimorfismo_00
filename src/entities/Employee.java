@@ -40,6 +40,12 @@ public class Employee {
 	public double payment() {
 		return hours * valuePerHour;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", hours=" + hours + ", valuePerHour=" + valuePerHour + "]";
+	}
+
+
 
 }

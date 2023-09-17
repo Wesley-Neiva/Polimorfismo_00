@@ -23,6 +23,11 @@ public class OutsourcedEmployee extends Employee{
 	public void additional(double additional) {
 		additionalCharge = additionalCharge + additional * 1.1;
 	}
+
+	@Override
+	public String toString() {
+		return "OutsourcedEmployee [additionalCharge=" + additionalCharge + "]";
+	}
 	
 	
 
