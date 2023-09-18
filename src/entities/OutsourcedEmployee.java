@@ -26,9 +26,8 @@ public class OutsourcedEmployee extends Employee{
 
 	@Override
 	public String toString() {
-		return "OutsourcedEmployee [additionalCharge=" + additionalCharge + "]";
+		return name + "- $ " + payment();
+	
 	}
-	
-	
 
 }

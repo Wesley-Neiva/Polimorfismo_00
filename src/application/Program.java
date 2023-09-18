@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -13,8 +15,10 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Employee emp = new Employee();
-		OutsourcedEmployee outsourced = new OutsourcedEmployee();
+		
+		
+		List<Employee> emp = new ArrayList<>();
+		List<OutsourcedEmployee> outsourced = new ArrayList<>();
 		
 				
 		System.out.println("Enter the number of employees:");
@@ -34,11 +38,8 @@ public class Program {
 				int hours = sc.nextInt();
 				System.out.print("Value per hour: ");
 				double valuePerHour = sc.nextDouble();
-				emp = new Employee(name, hours, valuePerHour);
-				emp.payment();
-				
-				
-					
+				emp.add(new Employee(name, hours, valuePerHour));
+									
 				
 			} if(ch != 'n') {
 				System.out.print("Name: ");
@@ -49,8 +50,8 @@ public class Program {
 				double valuePerHour = sc.nextDouble();	
 				System.out.print("Addition charge: ");
 				double additional = sc.nextDouble();
-				outsourced = new OutsourcedEmployee(name, hours, valuePerHour, additional);
-				outsourced.additional(additional);
+				outsourced.add(new OutsourcedEmployee(name, hours, valuePerHour, additional));
+				
 				
 				
 			}
@@ -58,8 +59,15 @@ public class Program {
 		}
 		
 		sc.close();
-		System.out.println(emp.toString());
-		System.out.println(outsourced.toString());
+		System.out.println("PAYMENTS: ");
+		for(Employee obj: emp) {
+			System.out.println(emp.toString());
+			
+		}
+		
+		for(OutsourcedEmployee obj: outsourced) {
+			System.out.println(outsourced.toString());
+		}
 	}
 }
 		
