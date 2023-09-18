@@ -15,10 +15,8 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		
-		
-		List<Employee> emp = new ArrayList<>();
-		List<OutsourcedEmployee> outsourced = new ArrayList<>();
+				
+		List<Employee> outsourced = new ArrayList<>();
 		
 				
 		System.out.println("Enter the number of employees:");
@@ -38,7 +36,8 @@ public class Program {
 				int hours = sc.nextInt();
 				System.out.print("Value per hour: ");
 				double valuePerHour = sc.nextDouble();
-				emp.add(new Employee(name, hours, valuePerHour));
+				outsourced.add(new Employee(name, hours, valuePerHour));
+				System.out.println();
 									
 				
 			} if(ch != 'n') {
@@ -51,23 +50,18 @@ public class Program {
 				System.out.print("Addition charge: ");
 				double additional = sc.nextDouble();
 				outsourced.add(new OutsourcedEmployee(name, hours, valuePerHour, additional));
-				
-				
-				
+				System.out.println();
+								
 			}
 						
 		}
-		
-		sc.close();
+		System.out.println();
 		System.out.println("PAYMENTS: ");
-		for(Employee obj: emp) {
-			System.out.println(emp.toString());
+		for(Employee emp: outsourced) {
+			System.out.println(emp.getName() + " - $ " + String.format("%.2f", emp.payment()));
+		}
 			
-		}
-		
-		for(OutsourcedEmployee obj: outsourced) {
-			System.out.println(outsourced.toString());
-		}
+		sc.close();	
 	}
 }
 		

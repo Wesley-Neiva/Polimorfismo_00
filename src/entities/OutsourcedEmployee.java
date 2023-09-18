@@ -20,14 +20,10 @@ public class OutsourcedEmployee extends Employee{
 		this.additionalCharge = additionalCharge;
 	}
 	
-	public void additional(double additional) {
-		additionalCharge = additionalCharge + additional * 1.1;
-	}
-
 	@Override
-	public String toString() {
-		return name + "- $ " + payment();
-	
+	public double payment() {
+		return super.payment() + additionalCharge * 1.1;
+		
 	}
 
 }

@@ -41,11 +41,4 @@ public class Employee {
 		return hours * valuePerHour;
 	}
 
-	@Override
-	public String toString() {
-		return name + " - $ " + payment();
-	}
-
-
-
 }
